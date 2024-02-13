@@ -9,6 +9,7 @@ you will be asked to enter the file name you want to convert (path to file if no
 This can be used to generate massive dictionaries for pentesting.
 
 The converter follows several rules:
+
 1.User Input for Source File: It prompts the user to input the path of the source file from which they want to generate leet (1337) combinations. This path can be a simple file name if the file is in the same directory as the script or a full path to the file's location.
 
 2.Automatic Output File Naming: Based on the input file name provided by the user, the script automatically generates an output file name by appending _leet_nd.txt to the base name of the input file. This naming convention helps in identifying the output file as containing leet combinations without duplicates, derived from the original source file.
