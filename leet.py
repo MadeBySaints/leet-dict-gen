@@ -4,7 +4,9 @@ def generate_leet_combinations(word, leet_map):
             return [""]
         combos = []
         first, rest = chars[0], chars[1:]
-        for char in leet_map.get(first.lower(), [first]):
+        # Retrieve substitutions, ensuring uniqueness with set
+        substitutions = set(leet_map.get(first, [first]) + leet_map.get(first.lower(), []))
+        for char in substitutions:
             for combo in generate_combos(rest):
                 combos.append(char + combo)
         return combos
@@ -20,7 +22,6 @@ def generate_leet_combinations(word, leet_map):
 
 def process_file_with_no_duplicates(leet_map):
     input_file_path = input("Enter the path to your source file: ")
-    # Automatically generate the output file path by appending '_leet_nd.txt' to the input file name (before the file extension if present)
     if '.' in input_file_path:
         output_file_path = input_file_path.rsplit('.', 1)[0] + '_leet_nd.txt'
     else:
@@ -38,16 +39,35 @@ def process_file_with_no_duplicates(leet_map):
                 else:
                     print(f"Duplicate removed: {combo}")
 
-# Leet map definition
+# Updated leet_map including all letters with uppercase, lowercase, and numeric leet equivalents
 leet_map = {
-    'a': ['a', '4'], 'b': ['b', '8'], 'c': ['c'], 'd': ['d'], 'e': ['e', '3'],
-    'f': ['f'], 'g': ['g', '9'], 'h': ['h'], 'i': ['i', '1'], 'j': ['j'],
-    'k': ['k'], 'l': ['l', '1'], 'm': ['m'], 'n': ['n'], 'o': ['o', '0'],
-    'p': ['p'], 'q': ['q'], 'r': ['r'], 's': ['s', '5'], 't': ['t', '7'],
-    'u': ['u'], 'v': ['v'], 'w': ['w'], 'x': ['x'], 'y': ['y'], 'z': ['z'],
-    '0': ['0', 'o'], '1': ['1', 'l', 'i'], '2': ['2'], '3': ['3', 'e'], 
-    '4': ['4', 'a'], '5': ['5', 's'], '6': ['6'], '7': ['7', 't'], '8': ['8', 'b'], '9': ['9', 'g']
+    'a': ['a', 'A', '4'], 'A': ['A', 'a', '4'],
+    'b': ['b', 'B', '8'], 'B': ['B', 'b', '8'],
+    'c': ['c', 'C'], 'C': ['C', 'c'],
+    'd': ['d', 'D'], 'D': ['D', 'd'],
+    'e': ['e', 'E', '3'], 'E': ['E', 'e', '3'],
+    'f': ['f', 'F'], 'F': ['F', 'f'],
+    'g': ['g', 'G', '9'], 'G': ['G', 'g', '9'],
+    'h': ['h', 'H'], 'H': ['H', 'h'],
+    'i': ['i', 'I', '1'], 'I': ['I', 'i', '1'],
+    'j': ['j', 'J'], 'J': ['J', 'j'],
+    'k': ['k', 'K'], 'K': ['K', 'k'],
+    'l': ['l', 'L', '1'], 'L': ['L', 'l', '1'],
+    'm': ['m', 'M'], 'M': ['M', 'm'],
+    'n': ['n', 'N'], 'N': ['N', 'n'],
+    'o': ['o', 'O', '0'], 'O': ['O', 'o', '0'],
+    'p': ['p', 'P'], 'P': ['P', 'p'],
+    'q': ['q', 'Q'], 'Q': ['Q', 'q'],
+    'r': ['r', 'R'], 'R': ['R', 'r'],
+    's': ['s', 'S', '5'], 'S': ['S', 's', '5'],
+    't': ['t', 'T', '7'], 'T': ['T', 't', '7'],
+    'u': ['u', 'U'], 'U': ['U', 'u'],
+    'v': ['v', 'V'], 'V': ['V', 'v'],
+    'w': ['w', 'W'], 'W': ['W', 'w'],
+    'x': ['x', 'X'], 'X': ['X', 'x'],
+    'y': ['y', 'Y'], 'Y': ['Y', 'y'],
+    'z': ['z', 'Z', '2'], 'Z': ['Z', 'z', '2']
 }
 
-# Example usage now with user input for file names and integrated functionality
+# Execute the script
 process_file_with_no_duplicates(leet_map)
