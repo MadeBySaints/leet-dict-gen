@@ -1,14 +1,16 @@
 # leet-dict-gen
 convert any .txt dictionary into a larger leetspeak enabled dictionary
 
-leet dict gen requires python to run. simply place in the folder with the text file you want to convert, open a cmd prompt in that folder
+notes: included wpa.txt for testing. (caution: Generates a ~250MB file with all the combinations)
+
+Leet Dict Gen requires python to run. simply place in the folder with the text file you want to convert, open a cmd prompt in that folder
 enter into command prompt:
 python leet.py
 you will be asked to enter the file name you want to convert (path to file if not in same folder)
 
-This can be used to generate massive dictionaries for pentesting.
+This can be used to generate massive dictionaries for pentesting/bruteforce testing.
 
-The converter follows several rules:
+Leet Dict Gen follows several rules:
 
 1.User Input for Source File: It prompts the user to input the path of the source file from which they want to generate leet (1337) combinations. This path can be a simple file name if the file is in the same directory as the script or a full path to the file's location.
 
