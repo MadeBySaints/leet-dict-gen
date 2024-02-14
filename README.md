@@ -28,14 +28,16 @@ The Leet Combination Generator script takes a list of words from an input file a
 1. Clone or download the repository to your local machine. Just the leet.py file will work.
 2. Ensure you have Python installed on your system (version 3.6 or higher).
 3. Install tqdm library using the following command:
+
 pip install tqdm
 
-4. Run the script using the following command:
-python leet_combination_generator.py
+5. Run the script using the following command:
 
-5. Follow the prompts to provide the input file name, maximum mutations per word, minimum word length, and maximum chunk size.
-6. The script will process the input file and generate leet combinations, showing progress with a live progress bar.
-7. Once finished, the unique leet combinations will be written to the output file.
+python leet.py
+
+6. Follow the prompts to provide the input file name, maximum mutations per word, minimum word length, and maximum chunk size.
+7. The script will process the input file and generate leet combinations, showing progress with a live progress bar.
+8. Once finished, the unique leet combinations will be written to the output file.
 
 ## Example
 Suppose you have a file named `words.txt` containing the following words:
