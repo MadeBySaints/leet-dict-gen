@@ -3,25 +3,55 @@ convert any .txt dictionary into a larger leetspeak enabled dictionary
 
 notes: included wpa.txt for testing. (caution: Generates a ~250MB file with all the combinations)
 
-Leet Dict Gen requires python to run. simply place in the folder with the text file you want to convert, open a cmd prompt in that folder
-enter into command prompt:
+Leet Dict Gen requires python to run. simply place in the folder with the text file you want to convert, open a cmd prompt in that folder.
+Enter into command prompt:
 python leet.py
-you will be asked to enter the file name you want to convert (path to file if not in same folder)
+
+Follow prompts
 
 This can be used to generate massive dictionaries for pentesting/bruteforce testing.
 
-Leet Dict Gen follows several rules:
+# Leet Combination Generator
 
-1.User Input for Source File: It prompts the user to input the path of the source file from which they want to generate leet (1337) combinations. This path can be a simple file name if the file is in the same directory as the script or a full path to the file's location.
+## Overview
+The Leet Combination Generator script takes a list of words from an input file and generates leet combinations for each word, applying common character substitutions according to the leet_map dictionary. It then writes the unique combinations to an output file, with each combination on a separate line.
 
-2.Automatic Output File Naming: Based on the input file name provided by the user, the script automatically generates an output file name by appending _leet_nd.txt to the base name of the input file. This naming convention helps in identifying the output file as containing leet combinations without duplicates, derived from the original source file.
+## Specifications
+- **Input**: Text file containing a list of words.
+- **Output**: Text file containing unique leet combinations of the input words.
+- **Character Substitutions**: The script applies common leet substitutions according to the provided leet_map dictionary.
+- **Maximum Mutations per Word**: The user can specify the maximum number of mutations allowed per word.
+- **Minimum Word Length**: The user can specify the minimum length of words to include in the generation process.
+- **Maximum Chunk Size**: The user can specify the maximum size (in KB) of each chunk processed to control memory usage.
 
-3.Leet Combinations Generation: For each line in the source file, the script generates all possible leet combinations based on a predefined mapping (leet_map) that associates certain letters and numbers with their leet equivalents. This process involves recursive combination generation to cover all possible leet representations of a word.
+## Usage & Dependencies
+1. Clone or download the repository to your local machine. Just the leet.py file will work.
+2. Ensure you have Python installed on your system (version 3.6 or higher).
+3. Install tqdm library using the following command:
+pip install tqdm
 
-4.Duplicate Removal: As it generates leet combinations, the script ensures that each combination is unique within the output file. It achieves this by maintaining a set of seen lines (seen_lines). Before writing a combination to the output file, it checks if the combination is already in the set. If not, the combination is written to the file and added to the set, ensuring no duplicates are produced.
+4. Run the script using the following command:
+python leet_combination_generator.py
 
-5.Reporting Duplicates: When a duplicate combination is generated, rather than writing it to the output file, the script reports this by printing a message indicating that a duplicate was removed. This feedback can be useful for understanding how many and which duplicates were encountered and removed during processing.
+5. Follow the prompts to provide the input file name, maximum mutations per word, minimum word length, and maximum chunk size.
+6. The script will process the input file and generate leet combinations, showing progress with a live progress bar.
+7. Once finished, the unique leet combinations will be written to the output file.
 
-6.Leet Map Customization: The leet_map dictionary defines the mappings from standard alphabetic characters and numbers to their leet equivalents. This map is crucial for generating the leet combinations and can be customized to include more or fewer equivalences based on the user's requirements.
+## Example
+Suppose you have a file named `words.txt` containing the following words:
+hello
+world
+leet
+generator
 
-The script combines text processing, user interaction, and file handling in Python to automate the generation of leet text from a source file while ensuring uniqueness and providing feedback on duplicate removal. This tool can be particularly useful for creating variant datasets, such as for password cracking exercises, testing databases for unique constraints, or any other application requiring unique combinations of leet text.
+You run the script and provide the input file name as `words.txt`, maximum mutations per word as `2`, minimum word length as `3`, and maximum chunk size as `1024 KB`. The script will then generate leet combinations for words with a minimum length of 3, applying a maximum of 2 mutations per word, and write the unique combinations to an output file named `words_leet_nd.txt`.
+
+## Notes
+- The script uses tqdm library to display a progress bar for the processing.
+- Ensure you have appropriate permissions to read from the input file and write to the output file.
+- ND simply stands for no duplicates
+
+
+
+
+
