@@ -1,5 +1,5 @@
 # leet-dict-gen
-convert any .txt dictionary into a larger leetspeak enabled dictionary
+Convert any .txt dictionary into a larger leetspeak enabled dictionary
 
 This can be used to generate massive dictionaries for pentesting/bruteforce testing.
 
