@@ -131,7 +131,7 @@ def process_file_with_no_duplicates(leet_map, max_chunk_size=1024):
 
     print(f"Total words skipped due to length < {min_length}: {skipped_short_words_count}")
 
-# Full leet_map with case-insensitive handling unchanged
+# Full leet_map with case-insensitive handling
 leet_map = {
     'a': ['a', 'A', '4'], 'A': ['A', 'a', '4'],
     'b': ['b', 'B', '8'], 'B': ['B', 'b', '8'],
