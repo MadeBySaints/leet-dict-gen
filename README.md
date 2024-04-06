@@ -3,10 +3,10 @@ Convert any .txt dictionary into a larger leetspeak enabled dictionary
 
 This can be used to generate massive dictionaries for pentesting/bruteforce testing.
 
-# Leet Combination Generator
+# Leet Speak Dictionary Generator
 
 ## Overview
-The Leet Combination Generator script takes a list of words from an input file and generates leet combinations for each word, applying common character substitutions according to the leet_map dictionary. It then writes the unique combinations to an output file, with each combination on a separate line.
+The Leet Dictionary Generator script takes a list of words from an input file and generates leet combinations for each word, applying common character substitutions according to the leet_map dictionary. It then writes the unique combinations to an output file, with each combination on a separate line.
 
 ## Specifications
 - **Input**: Text file containing a list of words.
